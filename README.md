@@ -47,6 +47,7 @@ Instead of a single prompt-based assistant, the system used a multi-agent approa
 ## What I Built
 
 - A customized Chatwoot-based support operation with kanban workflow adaptations
+- A white-labeled Chatwoot deployment aligned with my own brand and customized workflow
 - WhatsApp conversation handling through Evolution API
 - A multi-agent orchestration flow built in n8n
 - OpenAI-powered intent analysis and routing
@@ -142,6 +143,7 @@ At a high level, the platform combined a conversation layer, an orchestration la
 ### Conversation layer
 
 - Chatwoot
+- white-labeled branding and customized support experience
 - customized support UI with kanban workflow adaptations
 - WhatsApp channel through Evolution API
 
@@ -337,6 +339,7 @@ The complete source code, internal integrations, secrets, and infrastructure det
 I designed and implemented the automation system behind the project, including:
 
 - multi-agent workflow design;
+- white-label product customization on top of Chatwoot;
 - support and lead-routing logic;
 - customer identification and permission-aware routing via data lookup;
 - AI orchestration through n8n;
