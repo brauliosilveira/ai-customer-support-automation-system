@@ -332,3 +332,8 @@ I designed and implemented the automation system behind the project, including:
 ## Contact
 
 If you would like a live walkthrough or want to discuss AI support systems, multi-agent orchestration, automation architecture, or full-stack roles, feel free to reach out.
+
+- Website: https://www.brauliosilveira.com
+- LinkedIn: https://linkedin.com/in/brauliosilveira
+- Email: contact@brauliosilveira.com
+- YouTube: https://youtube.com/@venderpelowhats
