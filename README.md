@@ -27,6 +27,8 @@ The goal was not just to respond automatically, but to route each conversation i
 
 The result was an AI-enabled support and sales-assistance system that connected conversation intake, triage, routing, scheduling, and knowledge access inside one operational flow.
 
+One of the strongest product decisions was to avoid the usual robotic intake pattern. Instead of asking users whether they were customers, requesting documents, or forcing repetitive identification steps, the system could identify the WhatsApp number against the company's data and infer the correct path automatically. That made the experience significantly more natural and reduced friction at the start of the conversation.
+
 ## Why This Project Matters
 
 Many businesses do not need "just a chatbot." They need a system that can:
@@ -113,11 +115,15 @@ If the user was a customer, the system attempted to identify the correct destina
 
 If the user was a campaign lead, the system moved into SDR-style qualification and scheduling behavior.
 
+Importantly, this was not done by asking the user to explicitly classify themselves. The system queried the company data layer and matched the incoming WhatsApp number directly, allowing the flow to determine whether that person was already a customer or an inbound lead without adding robotic intake questions.
+
 ### Support routing
 
 For customer conversations, the system used business-specific logic to determine where the conversation should go next.
 
 This made the AI layer operationally useful rather than merely conversational.
+
+The same data lookup also allowed the system to understand whether that contact had permission to request specific company documents, which made the experience more personalized and reduced unnecessary verification steps.
 
 ### Lead qualification and scheduling
 
@@ -202,6 +208,8 @@ Depending on the route, the system may:
 
 The conversation ends either with resolution by automation or with a structured handoff to a human team member.
 
+The system was also able to recognize employee nicknames used by customers, which improved routing accuracy and made the interaction feel more human and context-aware.
+
 ## Key Engineering Decisions
 
 ### Use a multi-agent model instead of a single general-purpose assistant
@@ -223,6 +231,10 @@ Using Supabase vector retrieval and Google Docs as source material reduced hallu
 ### Automate business outcomes, not just responses
 
 The real value of the system was not automatic messaging alone. It was the ability to route, qualify, schedule, and operationalize conversations.
+
+### Use data-backed identification instead of robotic intake
+
+Rather than asking users to repeatedly confirm whether they were customers or to provide documents already known by the business, the system used the incoming WhatsApp number to look up customer status and operational permissions. This reduced friction and produced a much more human support experience.
 
 ## Historical Context
 
@@ -247,11 +259,14 @@ This project demonstrates:
 - practical multi-agent system design;
 - operational automation for customer support and sales intake;
 - AI routing tied to business workflows rather than generic chat behavior;
+- humanized support automation backed by real business data;
 - knowledge-retrieval integration for grounded answers;
 - real scheduling automation tied to lead conversion;
 - infrastructure ownership across VPS, containers, databases, and support tooling.
 
 It also shows a practical business skill: turning inbound messaging into a structured, automatable operating system for support and revenue workflows.
+
+It also demonstrates measurable operational value: a task previously handled by a dedicated employee whose role was to identify the demand and route the conversation could now be handled automatically by the AI workflow.
 
 ## Stack
 
@@ -323,6 +338,7 @@ I designed and implemented the automation system behind the project, including:
 
 - multi-agent workflow design;
 - support and lead-routing logic;
+- customer identification and permission-aware routing via data lookup;
 - AI orchestration through n8n;
 - FAQ retrieval design with vector search;
 - scheduling automation;
